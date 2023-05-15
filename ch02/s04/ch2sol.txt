@@ -5,7 +5,7 @@ TO USE THE TERRAFORM CLI: click "Terminal" > "New Terminal"
 
 Clone the repository with the command : git clone https://github.com/cerfort2/manning-book
 
-Open the repository by clicking file> workstation> terraform> manning_book
+Open the repository by clicking file> workstation> terraform> manning_book and press the enter key
 
 Enter the command: gcloud auth login
 Click yes, and open the link that is outputted in the terminal.
@@ -26,7 +26,7 @@ Open the file, copy all contents in the file, and paste in the key.json file in 
 
 In key.json, copy the contents of the "client_email" variable and paste on line 51 of main.tf in the "email" variable
 
-AMAZON:  
+**AMAZON**:  
 
     If you have not cloned the repository, you must do so by running the command:
         git clone https://github.com/cerfort2/manning-book
@@ -47,4 +47,6 @@ AMAZON:
     Run the following commands and your aws vpc will be created: 
     aws ec2 create-default-vpc
     terraform init
+
     terraform apply
+    Enter "us-east-1" if prompted for a region
