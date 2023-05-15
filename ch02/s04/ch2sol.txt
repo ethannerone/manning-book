@@ -1,3 +1,6 @@
+TO USE THE TERRAFORM CLI: click "Terminal" > "New Terminal" 
+
+
 **GOOGLE**:
 
 Clone the repository with the command : git clone https://github.com/cerfort2/manning-book
