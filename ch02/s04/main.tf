@@ -3,7 +3,7 @@
 
 provider "google" {
   # Configuration options
-  project = "p-gjizqrtfsuxm-0" 
+  project = "<YOUR_PROJECT_ID>" 
   credentials = "key.json" 
 }
 
@@ -37,7 +37,7 @@ resource "google_compute_instance" "instance-3" {
       network_tier = "PREMIUM"
     }
 
-    subnetwork = "projects/p-gjizqrtfsuxm-0/regions/us-central1/subnetworks/default"
+    subnetwork = "projects/<YOUR_PROJECT_ID>/regions/us-central1/subnetworks/default"
   }
 
   scheduling {

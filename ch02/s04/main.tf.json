@@ -1,14 +1,5 @@
 {
-    "provider": [
-     {
-         "google": [
-             {"project" : "p-gjizqrtfsuxm-0", 
-             "credentials" : "key.json" 
-             }
-         ]
-     }
-    ],
-     "resource": [
+    "resource": [
          {
              "google_compute_instance": [
                  {
