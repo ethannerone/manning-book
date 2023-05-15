@@ -1,0 +1,22 @@
+Clone the repository with the command : git clone https://github.com/cerfort2/manning-book
+
+Open the repository by clicking file> workstation> terraform> manning_book
+
+Enter the command: gcloud auth login
+Click yes, and open the link that is outputted in the terminal.
+
+Login with your provided email and password under the "gcpproject" tab inside "Cloud Accounts"
+Click I understand, then click allow. Copy the authentication code and paste in the terminal in Vscode
+
+Make sure you are working in the correct directory by using the command: cd /root/workstation/terraform/manning-book/ch02/s04
+
+Copy your project ID and replace the text the text "<YOUR_PROJECT_ID" on lines 6 and 40 in main.tf with yours
+
+Now we need to authorize your credentials.
+Click on the link under "project ID" inside the "Cloud Accounts" tab. 
+Search "Service Accounts" in the top search bar and click on "Service Accounts," the first result of the search
+Click on the first email underneath the emails section.
+Click on keys> add key> create new key> JSON format > Create
+Open the file, copy all contents in the file, and paste in the key.json file in Vscode
+
+In key.json, copy the contents of the "client_email" variable and paste on line 51 of main.tf in the "email" variable

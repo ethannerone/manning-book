@@ -1,15 +1,15 @@
 import json
 
-# "provider": [
-#         {
-#             "aws": [
-#                 {
-#                     "access_key": "AKIARU66GPGZY7NEVVGR",
-#                     "secret_key": "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",
-#                     "region": "us-east-1"
-#                 }
-#             ]
-#         }
+ "provider": [
+         {
+             "aws": [
+                 {
+                     "access_key": "AKIARU66GPGZY7NEVVGR",
+                     "secret_key": "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",
+                     "region": "us-east-1"
+                 }
+             ]
+         }
 
 
 def hello_server(name, network):
