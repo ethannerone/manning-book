@@ -54,7 +54,8 @@
                 {
                     "default": [
                         {
-                            "availability_zone": "${data.aws_region.current.name}a"
+                            "availability_zone": "${data.aws_region.current.name}a",
+                            "vpc_id": "${data.aws_vpc.default.id}"
                         }
                     ]
                 }

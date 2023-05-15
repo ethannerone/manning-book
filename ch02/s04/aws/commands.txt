@@ -1,5 +1,0 @@
-   51  snap install aws-cli --classic
-   52  aws ec2 create-default-vpc
-   53  aws configure
-   54  aws ec2 create-default-vpc
-   55  terraform apply
