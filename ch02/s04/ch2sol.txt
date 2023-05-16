@@ -26,6 +26,12 @@ Open the file, copy all contents in the file, and paste in the key.json file in 
 
 In key.json, copy the contents of the "client_email" variable and paste on line 51 of main.tf in the "email" variable
 
+Run the following commands:
+terraform init
+terraform apply
+
+terraform destroy (this command destroys all of your resources, and you need to run this in order to complete the other labs)
+
 **AMAZON**:  
 
     If you have not cloned the repository, you must do so by running the command:
@@ -47,6 +53,10 @@ In key.json, copy the contents of the "client_email" variable and paste on line 
     Run the following commands and your aws vpc will be created: 
     aws ec2 create-default-vpc
     terraform init
-
+    
     terraform apply
     Enter "us-east-1" if prompted for a region
+    
+    
+    terraform destroy (this command destroys all of your resources, and you need to run this in order to complete the other labs)
+    
