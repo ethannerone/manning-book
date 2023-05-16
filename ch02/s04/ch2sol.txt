@@ -5,7 +5,7 @@ TO USE THE TERRAFORM CLI: click "Terminal" > "New Terminal"
 
 Clone the repository with the command : git clone https://github.com/cerfort2/manning-book
 
-Open the repository by clicking file> workstation> terraform> manning_book and press the enter key
+Open the repository by clicking file> open folder > workstation> terraform> manning_book and press the enter key
 
 Enter the command: gcloud auth login
 Click yes, and open the link that is outputted in the terminal.
