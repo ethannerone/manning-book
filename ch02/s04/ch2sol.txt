@@ -32,31 +32,4 @@ terraform apply
 
 terraform destroy (this command destroys all of your resources, and you need to run this in order to complete the other labs)
 
-**AMAZON**:  
-
-    If you have not cloned the repository, you must do so by running the command:
-        git clone https://github.com/cerfort2/manning-book
-
-    Open the repository by clicking file> workstation> terraform> manning_book
-
-    Make sure you are working in the correct directory by running the command: cd 
-
-    Run the following commands: 
-
-   snap install aws-cli --classic
-   
-   aws configure
-   You will need to copy your access_key and secret_access_key from the "Cloud Accounts" tab where the command line prompts you to.
-   Use "us-east-1" for region
-   Press the enter key if the CLI prompts you for an output format
-
-    Run the following commands and your aws vpc will be created: 
-    aws ec2 create-default-vpc
-    terraform init
-    
-    terraform apply
-    Enter "us-east-1" if prompted for a region
-    
-    
-    terraform destroy (this command destroys all of your resources, and you need to run this in order to complete the other labs)
     
