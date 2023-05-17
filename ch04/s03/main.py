@@ -3,13 +3,13 @@ import re
 
 
 class StorageBucketFacade:
-    def __init__(self, name):
+    def __init__(self, name):       #Using the facade pattern, outputs the bucket name as part of the storage output object. This implements dependency inversion to abstract away unnecessary bucket attributes.
         self.name = name
 
 
-class StorageBucketModule:
+class StorageBucketModule:          #Creates a low-level module for the GCP storage bucket, which uses the factory pattern to generate a bucket
     def __init__(self, name, location='US'):
-        self.name = f'{name}-storage-bucket'
+        self.name = f'{name}-storage-bucket'        #Creates the Google storage bucket using a Terraform resource based on the name and location
         self.location = location
         self.resources = self._build()
 
@@ -21,23 +21,23 @@ class StorageBucketModule:
                         self.name: [{
                             'name': self.name,
                             'location': self.location,
-                            'force_destroy': True
+                            'force_destroy': True       #Sets an attribute on the Google storage bucket to destroy it when you delete Terraform resources
                         }]
                     }]
                 }
             ]
         }
 
-    def outputs(self):
+    def outputs(self):      #Creates an output method for the module that returns a list of attributes for the storage bucket
         return StorageBucketFacade(self.name)
 
 
-class StorageBucketAccessModule:
-    def __init__(self, bucket, user, role):
-        if not self._validate_user(user):
+class StorageBucketAccessModule:    #Creates a high-level module to add access control rules to the storage bucket
+    def __init__(self, bucket, user, role): #Passes the bucket’s output facade to the high-level module
+        if not self._validate_user(user):   #Validates that the users passed to the module match valid user group types for all users or all authenticated users
             print("Please enter valid user or group ID")
             exit()
-        if not self._validate_role(role):
+        if not self._validate_role(role):       #Validates that the roles passed to the module match valid roles in GCP
             print("Please enter valid role")
             exit()
         self.bucket = bucket
@@ -68,7 +68,7 @@ class StorageBucketAccessModule:
             'resource': [{
                 'google_storage_bucket_access_control': [{
                     self._change_case(): [{
-                        'bucket': self.bucket.name,
+                        'bucket': self.bucket.name,     #Creates Google storage bucket access control rules using a Terraform resource
                         'role': self.role,
                         'entity': self.user
                     }]
