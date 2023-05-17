@@ -3,7 +3,7 @@ import os
 
 
 class DatabaseGoogleProject:
-    def __init__(self):
+    def __init__(self): #   def __init__(self):
         self.name = 'databases'  # A
         self.organization = os.environ.get('USER')  # B
         self.project_id = f'{self.name}-{self.organization}'  # B
