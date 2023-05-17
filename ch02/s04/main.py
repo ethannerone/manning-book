@@ -1,11 +1,11 @@
 import json
 
 
-def hello_server(name, network):
+def hello_server(name, network): # Passes the name and network as parameters to the configuration
     return {
         'resource': [
             {
-                'google_compute_instance': [
+                'google_compute_instance': [ # Uses Terraform’s google_compute_instance resource to configure a server
                     {
                         name: [
                             {
@@ -24,7 +24,7 @@ def hello_server(name, network):
                                 'name': name,
                                 'network_interface': [
                                     {
-                                        'network': network
+                                        'network': network # Sets the network by using the “network” variable
                                     }
                                 ],
                                 'labels': {
@@ -41,7 +41,7 @@ def hello_server(name, network):
 
 
 if __name__ == "__main__":
-    config = hello_server(name='hello-world', network='default')
+    config = hello_server(name='hello-world', network='default') #Sets the network dependency as the default network when you run the script
 
     with open('main.tf.json', 'w') as outfile:
-        json.dump(config, outfile, sort_keys=True, indent=4)
+        json.dump(config, outfile, sort_keys=True, indent=4) #Creates a JSON file with the server object and runs it with Terraform
