@@ -2,9 +2,9 @@ import json
 
 
 class Network:
-    def __init__(self, name="hello-network"):
+    def __init__(self, name="hello-network"):   #Creates the Google network using a Terraform resource named “hello-network”
         self.name = name
-        self.resource = self._build()
+        self.resource = self._build()       #Uses the module to create the JSON configuration for the network
 
     def _build(self):
         return {
@@ -20,8 +20,8 @@ class Network:
         }
 
 
-class Subnet:
-    def __init__(self, network, region='us-central1'):
+class Subnet:                           #Creates the Google subnetwork using a Terraform resource named after the region, us-central1
+    def __init__(self, network, region='us-central1'):      #Passes the entire network object to the subnet. The subnet calls the network object for the attributes it needs.
         self.network = network
         self.name = region
         self.subnet_cidr = '10.0.0.0/28'
@@ -36,8 +36,8 @@ class Subnet:
                         {
                             'name': self.name,
                             'ip_cidr_range': self.subnet_cidr,
-                            'region': self.region,
-                            'network': self.network.name
+                            'region': self.region,      
+                            'network': self.network.name        #Interpolates the network name by retrieving it from the object
                         }
                     ]
                 }
@@ -96,7 +96,7 @@ class ServerModule:
 
 
 if __name__ == "__main__":
-    network = NetworkModule()
+    network = NetworkModule()       #Uses the module to create the JSON configuration for the network
     server = ServerModule("hello-world",
                           network.output())
     resources = {
@@ -104,4 +104,4 @@ if __name__ == "__main__":
     }
 
     with open(f'main.tf.json', 'w') as outfile:
-        json.dump(resources, outfile, sort_keys=True, indent=4)
+        json.dump(resources, outfile, sort_keys=True, indent=4)     #Writes the Python dictionary to a JSON file to be executed by Terraform later
